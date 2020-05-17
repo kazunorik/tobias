@@ -8,13 +8,13 @@ function level_range(level){
     return [maxlvl, minlvl]
 }
 
-function findParty(sharerange, world){
+function findParty(sharerange, world, myname){
     var request = new XMLHttpRequest()
         request.open('GET', 'https://api.tibiadata.com/v2/world/'+ world +'.json', true)
         request.onload = function(){
             var data = JSON.parse(this.response)
             for(i=0; i<data.world.players_online.length; i++){
-                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1]){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     console.log(data.world.players_online[i].name)
                 }
             }
@@ -25,7 +25,7 @@ function findParty(sharerange, world){
 function findLvlRange(){
     if ($("charname").value != ''){
         // formating the name
-        var charname = $("charname").value
+        var charname = $("charname").value.replace(/[&\/\\#,+()$~%.":*?<>{}]/g,' ')
         charname_write = remove_edge_spaces(charname)
         charname = charname_write.replace(/\s+/g, '+')
 
@@ -39,7 +39,7 @@ function findLvlRange(){
             } else{
                 var sharerange = level_range(data.characters.data.level)
                 var world = data.characters.data.world
-                findParty(sharerange, world)
+                findParty(sharerange, world, charname_write)
             }
         }
         request.send()

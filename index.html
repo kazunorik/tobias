@@ -1,17 +1,39 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Tibia Party Finder</title>
+		<title>Drop Tracker</title>
 		<link rel="stylesheet" href="style.css">
 		
 	</head>
 	<body>
 		<div class="container">
-			<p>Your character name <input id="charname"></input></p>
-			<button onclick="findLvlRange()">Find me a party!</button>
-			
+			<table>
+				<col width="200">
+				<col width="80">
+				<col width="80">
+				<tr>
+					<th class="bossname">Boss</th>
+					<th>Count</th>
+					<th>Drops</th>
+				</tr>
+				<tr>
+					<th class="bossname">Oberon</th>
+					<th><button onclick="boss_count(0)">+</button><a id="oberon_count">0</a><button onclick="boss_count_minus(0)">-</button></th>
+					<th><button onclick="boss_drop(0)">+</button><a id="oberond_count">0</a><button onclick="boss_drop_minus(0)">-</button></th>
+				</tr>
+				<tr>
+					<th class="bossname">Faceless Bane</th>
+					<th><button onclick="boss_count(1)">+</button><a id="bane_count">0</a><button onclick="boss_count_minus(1)">-</button></th>
+					<th><button onclick="boss_drop(1)">+</button><a id="baned_count">0</a><button onclick="boss_drop_minus(1)">-</button></th>
+				</tr>
+				<tr>
+					<th class="bossname">Scarlett</th>
+					<th><button onclick="boss_count(2)">+</button><a id="scar_count">0</a><button onclick="boss_count_minus(2)">-</button></th>
+					<th><button onclick="boss_drop(2)">+</button><a id="scard_count">0</a><button onclick="boss_drop_minus(2)">-</button></th>
+				</tr>
+			</table>
 		</div>
-		<script src="texty_things.js"></script>
+
 		<script src="script.js"></script>
 	</body>
 </html>

@@ -32,3 +32,12 @@ button:hover{
 	background-color: rgba(231, 90, 124, 1);
 	color: white;
 }
+
+#wolololo{
+	color: rgba(132, 143, 165, 1);
+}
+#wolololo:hover{
+	background-color: rgba(231, 90, 124, 1);
+	color: white;
+	font-size: 9px;
+}

@@ -1,52 +1,60 @@
 function $(id){
-    return document.getElementById(id);
+    return document.getElementById(id)
 }
 
-var bosses_count = ["oberon_count", "bane_count", "scar_count"];
-var bosses_drops = ["oberond_count", "baned_count", "scard_count"];
-
-/* Se não há dados, criar zeros */
-if(localStorage.getItem('data') == null){
-    var data = '[{"boss": "Oberon", "kills": 0, "drops": 0}, {"boss": "Faceless Bane", "kills": 0, "drops": 0}, {"boss": "Scarlett", "kills": 0, "drops": 0}]';
-    localStorage.setItem('data', data);
+function level_range(level){
+    var maxlvl = Math.ceil(level*3/2)
+    var minlvl = Math.floor(level*2/3)
+    return [maxlvl, minlvl]
 }
 
-/* Dados para serem usados */
-var data_json = JSON.parse(localStorage.getItem('data'));
+function findParty(sharerange, world, myname, mydata){
+    // create table for my party
+    var me = document.createElement("TR")
+    me.innerHTML = "<th class=\"charnameontable\">"+ mydata.characters.data.name +"</th><th>"+ mydata.characters.data.level +"</th><th class=\"charvocontable\">"+ mydata.characters.data.vocation +"</th>"
+    $("myparty").appendChild(me)
 
-/* Adicionar ou remover drops e kills */
-function boss_count(boss){
-    data_json[boss].kills += 1;
-    localStorage.setItem('data', JSON.stringify(data_json));
-    $(bosses_count[boss]).innerHTML = data_json[boss].kills;
+    // create table for the results
+    var request = new XMLHttpRequest()
+        request.open('GET', 'https://api.tibiadata.com/v2/world/'+ world +'.json', true)
+        request.onload = function(){
+            var data = JSON.parse(this.response)
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    var resulti = document.createElement("TR")
+                    resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                    $("partyresults").appendChild(resulti)
+                    
+                }
+            }
+        }
+        request.send()
 }
 
-function boss_count_minus(boss){
-    if(data_json[boss].kills > 0 && data_json[boss].kills > data_json[boss].drops){
-        data_json[boss].kills -= 1;
-        localStorage.setItem('data', JSON.stringify(data_json));
-        $(bosses_count[boss]).innerHTML = data_json[boss].kills;
+function go(){
+    $("myparty").innerHTML=""
+    $("partyresults").innerHTML=""
+    if ($("charname").value != ''){
+        // formating the name
+        var charname = $("charname").value.replace(/[&\/\\#,+()$~%.":*?<>{}]/g,' ')
+        charname_write = remove_edge_spaces(charname)
+        charname = charname_write.replace(/\s+/g, '+')
+
+        // api request
+        var request = new XMLHttpRequest()
+        request.open('GET', 'https://api.tibiadata.com/v2/characters/'+ charname +'.json', true)
+        request.onload = function(){
+            var data = JSON.parse(this.response)
+            if(data.characters.error == "Character does not exist."){
+                alert(charname_write + " does not exist!")
+            } else{
+                var sharerange = level_range(data.characters.data.level)
+                var world = data.characters.data.world
+                findParty(sharerange, world, charname_write, data)
+            }
+        }
+        request.send()
+    } else {
+        alert("Please input character name")
     }
-}
-
-function boss_drop(boss){
-    if(data_json[boss].kills > data_json[boss].drops){
-        data_json[boss].drops += 1;
-        localStorage.setItem('data', JSON.stringify(data_json));
-        $(bosses_drops[boss]).innerHTML = data_json[boss].drops;
-    }
-}
-
-function boss_drop_minus(boss){
-    if(data_json[boss].drops > 0){
-        data_json[boss].drops -= 1;
-        localStorage.setItem('data', JSON.stringify(data_json));
-        $(bosses_drops[boss]).innerHTML = data_json[boss].drops;
-    }
-}
-
-/* Run */
-for(let i = 0; i < 3; i++){
-    $(bosses_drops[i]).innerHTML = data_json[i].drops;
-    $(bosses_count[i]).innerHTML = data_json[i].kills;
 }

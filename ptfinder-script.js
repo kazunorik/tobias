@@ -24,12 +24,77 @@ function findParty(sharerange, world, myname, mydata){
             $("partyresults").appendChild(result)
             for(i=0; i<data.world.players_online.length; i++){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
-                    var resulti = document.createElement("TR")
-                    resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
-                    $("partyresults").appendChild(resulti)
-                    
+                    if(data.world.players_online[i].vocation=="Elder Druid"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
                 }
             }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Elite Knight"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Royal Paladin"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Master Sorcerer"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Druid"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Knight"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Paladin"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            for(i=0; i<data.world.players_online.length; i++){
+                if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
+                    if(data.world.players_online[i].vocation=="Sorcerer"){   
+                        var resulti = document.createElement("TR")
+                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        $("partyresults").appendChild(resulti)
+                    }
+                }
+            }
+            
         }
         request.send()
 }

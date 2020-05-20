@@ -21,7 +21,7 @@ function findParty(sharerange, world, myname, mydata){
             var data = JSON.parse(this.response)
             var result = document.createElement("TR")
             result.innerHTML = "<th class=\"charnameontable\">Character</th><th>Level</th><th class=\"charvocontable\">Vocation</th>"
-            $("partyresults").appendChild(resulti)
+            $("partyresults").appendChild(result)
             for(i=0; i<data.world.players_online.length; i++){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     var resulti = document.createElement("TR")

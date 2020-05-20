@@ -33,20 +33,20 @@ table{
 	width: 50%;
 }
 
-tr:hover{
+button:hover, a:hover, tr:hover{
 	background-color: rgba(231, 90, 124, 1);
 }
 
-button{
+button, a{
 	text-decoration: none;
 	background-color: rgba(132, 143, 165, 1);
 	color: white;
 	border: none;
 }
 
-button:hover{
+div table tr:hover a {
 	background-color: rgba(231, 90, 124, 1);
-}
+ }
 
 #wolololo{
 	color: rgba(132, 143, 165, 1);

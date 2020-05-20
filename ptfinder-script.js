@@ -26,7 +26,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Elder Druid"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</a></th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -35,7 +35,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Elite Knight"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -44,7 +44,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Royal Paladin"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -53,7 +53,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Master Sorcerer"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -62,7 +62,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Druid"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -71,7 +71,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Knight"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -80,7 +80,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Paladin"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }
@@ -89,7 +89,7 @@ function findParty(sharerange, world, myname, mydata){
                 if(data.world.players_online[i].level <= sharerange[0] && data.world.players_online[i].level >= sharerange[1] && myname.toUpperCase() != data.world.players_online[i].name.toUpperCase()){
                     if(data.world.players_online[i].vocation=="Sorcerer"){   
                         var resulti = document.createElement("TR")
-                        resulti.innerHTML = "<th class=\"charnameontable\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
+                        resulti.innerHTML = "<th class=\"charnameontable\"><a href=\"https://www.tibia.com/community/?subtopic=characters&name=" + data.world.players_online[i].name.replace(/\s+/g, '+') + "\" target=\"_blank\" rel=\"noopener noreferrer\">"+ data.world.players_online[i].name +"</th><th>"+ data.world.players_online[i].level +"</th><th class=\"charvocontable\">"+ data.world.players_online[i].vocation +"</th>"
                         $("partyresults").appendChild(resulti)
                     }
                 }

@@ -126,3 +126,9 @@ function go(){
         alert("Please input character name")
     }
 }
+
+function enter_go(){
+    if (event.keyCode == 13){
+        go()    
+    }
+}
